@@ -19,7 +19,7 @@ For detailed walkthrough, please view:
 ## Price Insight System
 
 ## Rental Estimator System
-
+- Provide Airbnb host with rental price recommendation
 
 ## Contributors
 - @limlincoln
