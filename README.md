@@ -14,8 +14,12 @@ For detailed walkthrough, please view:
 - Allow Airbnb to better understand customer experience and tailor their services to better fit the needs of their customers
 
 
-## Conclusion
+## Customer Review System
 
+## Price Insight System
+
+## Rental Estimator System
+- Provide Airbnb host with rental price recommendation
 
 ## Contributors
 - @limlincoln
