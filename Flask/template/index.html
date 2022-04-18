@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Rental forecast for new host</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form id="rental_forecast" action="{{ url_for('predict')}}" method="post">
+
+      <label for="room_type_cat">Room Type: </label>
+        <select id="room_type_cat" name="room_type_cat">
+          <option value="0">Entire home/apt</option>
+          <option value="1">Hotel room</option>
+          <option value="2">Private room</option>
+          <option value="3">Shared room</option>
+        </select>
+
+        <input type="text" id="bedroom" name="bedroom" placeholder="Bedroom" required="required" />
+        <input type="text" id="number_of_reviews" name="number_of_reviews" placeholder="Number of review" required="required" />
+
+        <label for="neighbourhood_cleansed_cat">Area: </label>
+          <select id="neighbourhood_cleansed_cat" name="neighbourhood_cleansed_cat">
+            <option value="0">Ang Mo Kio</option>
+            <option value="1">Bedok</option>
+            <option value="2">Bishan</option>
+            <option value="3">Bukit Batok</option>
+            <option value="4">Bukit Merah</option>
+            <option value="5">Bukit Panjang</option>
+            <option value="6">Bukit Timah</option>
+            <option value="7">Central Water Catchment</option>
+            <option value="8">Chao Chu Kang</option>
+            <option value="9">Clementi</option>
+            <option value="10">Downtown Core</option>
+            <option value="11">Geylang</option>
+            <option value="12">Hougang</option>
+            <option value="13">Jurong East</option>
+            <option value="14">Jurong West</option>
+            <option value="15">Kallang</option>
+            <option value="16">Lim Chu Kang</option>
+            <option value="17">Mandai</option>
+            <option value="18">Marina South</option>
+            <option value="19">Marine Parade</option>
+            <option value="20">Museum</option>
+            <option value="21">Newton</option>
+            <option value="22">Novena</option>
+            <option value="23">Orchard</option>
+            <option value="24">Outram</option>
+            <option value="25">Pasir Ris</option>
+            <option value="26">Pioneer</option>
+            <option value="27">Punggol</option>
+            <option value="28">Queenstown</option>
+            <option value="29">River Valley</option>
+            <option value="30">Rochor</option>
+            <option value="31">Sembawang</option>
+            <option value="32">Sengkang</option>
+            <option value="33">Serangoon</option>
+            <option value="34">Singapore River</option>
+            <option value="35">Southern Islands</option>
+            <option value="36">Sungei Kadut</option>
+            <option value="37">Tampines</option>
+            <option value="38">Tanglin</option>
+            <option value="39">Toa Payoh</option>
+            <option value="40">Western Water Catchment</option>
+            <option value="41">Woodlands</option>
+            <option value="42">Yishun</option>
+          </select>
+
+          <br>
+
+          <label for="neighbourhood_group_cleansed_cat">Region: </label>
+            <select id="neighbourhood_group_cleansed_cat" name="neighbourhood_group_cleansed_cat">
+              <option value="0">Central Region</option>
+              <option value="1">East Region</option>
+              <option value="2">North Region</option>
+              <option value="3">North-East Region</option>
+              <option value="4">West Region</option>
+            </select>
+
+          <br>
+
+        <button type="submit" onclick="submitform()" value="Submit">Predict</button>
+
+    </form>
+
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+   <script>
+   function submitform() {
+     var number_of_reviews = document.getElementById("number_of_reviews").value;
+     let number_of_reviews_log = Math.log10(number_of_reviews);
+     document.getElementById("number_of_reviews") = number_of_reviews_log;
+     console.log(number_of_reviews_log)
+
+     document.getElementById("rental_forecast").submit();
+   }
+   </script>
+
+ </div>
+</body>
+</html>
