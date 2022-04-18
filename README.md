@@ -3,10 +3,10 @@
 
 This is a SC10, Group 6 Mini-Project for SC1015 (Introduction to Data Science and Artificial Intelligence) which focuses on Airbnb prices from [insideairbnb](http://insideairbnb.com/get-the-data/).
 
-For detailed walkthrough, please view the source code in order from:
-1. File
-2. File 
-3. File
+For detailed walkthrough, please view:
+1. Rental Estimator System
+3. Price Insight System
+4. Customer Review System
 
 
 ## Problem Defintion
