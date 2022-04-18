@@ -1,0 +1,2 @@
+# SC1015_SC10_GROUP6
+SC1015 SC10 Group 6 Mini-Project
