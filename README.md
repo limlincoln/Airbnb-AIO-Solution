@@ -1,2 +1,4 @@
-# SC1015S C10 GROUP6
-SC1015 SC10 Group 6 Mini-Project
+# Welcome to Airbnb AIO Solution
+-----
+## About
+-----
